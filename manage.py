@@ -15,14 +15,10 @@ from flask_cors import CORS
 from app import create_app
 from app.logConfig import setup_logging
 
-app = create_app(os.environ.get("FLASK_ENV", "pri"))
+app = create_app(os.environ.get("FLASK_ENV", "dev"))
 from app import celery_app
 
-# root = logging.getLogger()
-
 setup_logging()
-
-# from app.models import db
 
 CORS(app, supports_credentials=True)
 
